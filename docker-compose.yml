@@ -1,3 +1,10 @@
+name: digitovisky
+#TODO: adicionar no docker >> mysql, springboot
+
+volumes:
+  digitovisky-data:
+    driver: local
+
 services:
   java:
     build: .
@@ -5,4 +12,18 @@ services:
       - ./src:/usr/local/service
     command:
       - "sh"
-  #TODO: adicionar no docker >> mysql, springboot.
+  
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-digitovisky
+    environment:
+      - MYSQL_DATABASE=digitovisky
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
+      - TZ=America/Sao_Paulo
+    ports:
+      - 3306:3306
+    volumes:
+      - ./bancoDados/sql:/docker-entrypoint-initdb.d/
+      - digitovisky-data:/var/lib/mysql
+
