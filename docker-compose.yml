@@ -5,3 +5,4 @@ services:
       - ./src:/usr/local/service
     command:
       - "sh"
+  #TODO: adicionar no docker >> mysql, springboot.
