@@ -17,10 +17,9 @@ services:
     image: mysql:5.7
     container_name: mysql-digitovisky
     environment:
-      - MYSQL_DATABASE=digitovisky
-      - MYSQL_PASSWORD=root
-      - MYSQL_ROOT_PASSWORD=root
-      - TZ=America/Sao_Paulo
+      MYSQL_DATABASE: digitovisky
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
     ports:
       - 3306:3306
     volumes:
