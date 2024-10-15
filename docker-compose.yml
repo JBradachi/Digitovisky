@@ -1,0 +1,7 @@
+services:
+  java:
+    build: .
+    volumes:
+      - ./src:/usr/local/service
+    command:
+      - "sh"
