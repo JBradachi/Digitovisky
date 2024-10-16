@@ -1,5 +1,4 @@
 name: digitovsky
-#TODO: adicionar no docker >> mysql, springboot
 
 volumes:
   digitovsky-data:
@@ -10,8 +9,7 @@ services:
     build: .
     volumes:
       - ./digitovsky:/usr/local/service
-    command:
-      - "sh"
+    command: [ "sh", "-c", "cd /usr/local/service && gradle bootRun" ]
     ports:
       - "8080:8080"
     depends_on:
@@ -33,4 +31,3 @@ services:
     volumes:
       - ./bancoDados/sql:/docker-entrypoint-initdb.d/
       - digitovsky-data:/var/lib/mysql
-
