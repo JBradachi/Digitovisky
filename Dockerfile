@@ -10,11 +10,11 @@ RUN apk add --no-cache curl; \
 # Adição dos binários do gradle ao PATH da imagem do contêiner
 ENV PATH=${PATH}:/gradle-${GRADLE_VERSION}/bin
 
-COPY . /usr/local/service
+COPY ./digitovsky/ /usr/local/service
 WORKDIR /usr/local/service
 
 # Construir o projeto Spring boot
-RUN gradle build
+# RUN gradle build
 
 # Executar o JAR Spring Boot
-CMD ["java", "-jar", "build/libs/digitovskyApplication.jar"]
+# CMD [ "java", "-jar", "build/libs/digitovskyApplication.jar" ]

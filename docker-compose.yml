@@ -1,15 +1,15 @@
-name: digitovisky
+name: digitovsky
 #TODO: adicionar no docker >> mysql, springboot
 
 volumes:
-  digitovisky-data:
+  digitovsky-data:
     driver: local
 
 services:
   java:
     build: .
     volumes:
-      - ./src:/usr/local/service
+      - ./digitovsky:/usr/local/service
     command:
       - "sh"
     ports:
@@ -17,20 +17,20 @@ services:
     depends_on:
       - mysql
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-digitovisky:3306/digitovisky
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-digitovsky:3306/digitovsky
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-  
+
   mysql:
     image: mysql:5.7
-    container_name: mysql-digitovisky
+    container_name: mysql-digitovsky
     environment:
-      MYSQL_DATABASE: digitovisky
+      MYSQL_DATABASE: digitovsky
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
     ports:
       - 3306:3306
     volumes:
       - ./bancoDados/sql:/docker-entrypoint-initdb.d/
-      - digitovisky-data:/var/lib/mysql
+      - digitovsky-data:/var/lib/mysql
 
