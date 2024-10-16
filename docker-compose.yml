@@ -21,11 +21,13 @@ services:
 
   mysql:
     image: mysql:5.7
+    restart: always
     container_name: mysql-digitovsky
     environment:
       MYSQL_DATABASE: digitovsky
-      MYSQL_PASSWORD: root
+      MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: root
+
     ports:
       - 3306:3306
     volumes:
