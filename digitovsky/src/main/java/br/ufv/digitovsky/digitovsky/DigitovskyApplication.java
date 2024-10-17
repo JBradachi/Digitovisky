@@ -22,7 +22,9 @@ public class DigitovskyApplication {
 
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-		return args ->
-			jdbc.execute( "SELECT apelido FROM TB_teste WHERE PK_duduAntunesS2 = 'Eduardo'");
+		return args -> {
+			String apelido = jdbc.queryForObject( "SELECT apelido FROM TB_teste WHERE PK_duduAntunesS2 = 1", String.class);
+			System.out.printf("Apelido: %s\n", apelido);
+		};
 	}
 }
