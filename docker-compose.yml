@@ -29,7 +29,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
 
     ports:
-      - 3306:3306
+      - "3306:3306"
     volumes:
       - ./bancoDados/sql:/docker-entrypoint-initdb.d/
       - digitovsky-data:/var/lib/mysql
