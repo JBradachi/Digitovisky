@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS `digitovsky`.`TB_teste` (
   UNIQUE INDEX `PK_duduAntunesS2_UNIQUE` (`PK_duduAntunesS2` ASC))
 ENGINE = InnoDB;
 
-INSERT INTO TB_teste VALUES (1, 'Eduardo');
-INSERT INTO TB_teste VALUES (2, 'Bradas');
+INSERT INTO TB_teste (apelido) VALUES ('Eduardo');
+INSERT INTO TB_teste (apelido) VALUES ('Bradas');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

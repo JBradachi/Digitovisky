@@ -1,9 +1,5 @@
 name: digitovsky
 
-volumes:
-  digitovsky-data:
-    driver: local
-
 services:
   java:
     build: .
@@ -24,12 +20,12 @@ services:
     restart: always
     container_name: mysql-digitovsky
     environment:
-      MYSQL_DATABASE: digitovsky
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: root
 
     ports:
       - "3306:3306"
     volumes:
-      - ./bancoDados/sql:/docker-entrypoint-initdb.d/
-      - digitovsky-data:/var/lib/mysql
+      - type: bind
+        source: ./bancoDados/sql
+        target: /docker-entrypoint-initdb.d/
