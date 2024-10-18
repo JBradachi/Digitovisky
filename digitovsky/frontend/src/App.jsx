@@ -1,7 +1,35 @@
+//import React, { useEffect, useState } from "react";
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
+//export default function Teste(){
+//  const [text, setText] = useState("Nada por enquanto")
+//
+//  function getData(){
+//    fetch("http://localhost:3000/api/teste")
+//    .then((mess) => {
+//        console.log(mess)
+//        return mess.json()
+//      })
+//    .then((mess2) => {
+//      console.log(mess2)
+//      setText(JSON.stringify(mess2.message))
+//    })
+//  }
+//
+//  return (
+//    <div>
+//      <button onClick={getData}>
+//        Clique aqui
+//      </button>
+//      
+//      {text}
+//    </div>
+//  )
+//}
+
 
 function App() {
   const [count, setCount] = useState(0)
