@@ -5,9 +5,8 @@ export default function Teste(){
 
   function getData(){
     fetch("http://localhost:8080/teste")
-    .then((mess) => {
-      setText(JSON.stringify(mess))
-    })
+    .then((mess) => mess.text())
+    .then((text) => setText(text))
   }
 
   return (
@@ -15,7 +14,7 @@ export default function Teste(){
       <button onClick={getData}>
         Clique aqui
       </button>
-      
+
       {text}
     </div>
   )
