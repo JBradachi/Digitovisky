@@ -30,12 +30,12 @@ services:
         target: /docker-entrypoint-initdb.d/
 
   frontend:
-    image: "node:18-alpine"
+    build: ./frontend
     volumes:
     - ./frontend:/usr/local/service
     ports:
-      - "3000:3000"
-    command: [ "sh", "-c", "cd /usr/local/service && npm start"]
+      - "5173:5173"
+    command: [ "sh", "-c", "cd /usr/local/service && npm run dev --host 5173"]
     # depends_on:
     #   - backend
     # stdin_open: true
