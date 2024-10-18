@@ -1,6 +1,6 @@
 FROM openjdk:17-jdk-alpine
 
-# Instalação do Gradle no container
+# Instalação do Gradle dentro do container
 ARG GRADLE_VERSION=8.10.2
 RUN apk add --no-cache curl; \
     curl https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip > gradle.zip; \
