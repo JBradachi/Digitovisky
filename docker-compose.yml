@@ -2,7 +2,8 @@ name: digitovsky
 
 services:
   java:
-    build: .
+    build: . #./backend
+    # container_name: spring-digitovsky
     volumes:
       - ./digitovsky:/usr/local/service
     command: [ "sh", "-c", "cd /usr/local/service && gradle bootRun" ]
@@ -29,3 +30,16 @@ services:
       - type: bind
         source: ./bancoDados/sql
         target: /docker-entrypoint-initdb.d/
+
+  #react:
+  #  build: ./frontend
+  #  volumes:
+  #  - ./digitovsky/frontend:/usr/local/frontend
+  #  ports:
+  #    - 3000:3000
+  #  depends_on:
+  #    - java
+  #  container_name: react-digitovsky
+  #  stdin_open: true
+  #  tty: true
+    
