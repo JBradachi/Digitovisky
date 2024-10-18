@@ -35,7 +35,7 @@ services:
     - ./frontend:/usr/local/service
     ports:
       - "3000:3000"
-    command: [ "sh", "-c", "cd /usr/local/service && npm install && npm run dev --host "]
+    command: [ "sh", "-c", "cd /usr/local/service && npm install && npm run dev -- --host"]
     # depends_on:
     #   - backend
     # stdin_open: true
