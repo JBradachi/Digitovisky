@@ -4,6 +4,3 @@ FROM node:18-alpine
 # Isso envolve executar o procedimento de npm install com o package.json
 WORKDIR /usr/local/service
 RUN     npm install -g npm@latest
-# COPY    ./package.json .
-# COPY    ./package-lock.json .
-# RUN     npm install

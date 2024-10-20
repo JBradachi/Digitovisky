@@ -1,21 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import './Teste.css'
 
 export default function Teste(){
-  const [text, setText] = useState("Nada por enquanto")
+  const [text, setText] = useState("Nada por enquanto");
+  const [titulo, setTitulo] = useState("");
 
-  function getData(){
-    fetch("http://localhost:8080/teste")
+  const getText = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:8080/getText", {
+      method: 'POST',
+      body: titulo
+    })
+    .then((mess) => mess.text())
+    .then((text) => setText(text))
+  }
+
+  function getAllText(){
+    fetch("http://localhost:8080/getAllText")
     .then((mess) => mess.text())
     .then((text) => setText(text))
   }
 
   return (
     <div>
-      <button onClick={getData}>
-        Clique aqui
-      </button>
+      
+      <h1 class="t">DIGITÓVSKY</h1>
 
-      {text}
+      <label for="name" class='info'>Selecione um texto pelo seu título: </label>
+      <form class="pesquisa-texto" onSubmit={getText} >
+        <input 
+          type="text"
+          name="name" 
+          id="name"
+          required
+          value={titulo}
+          onChange={(e) => setTitulo(e.target.value)}
+          />
+        <button type="submit" >Selecionar</button>
+      </form>
+
+      <button onClick={getAllText} class='botaoTexto'> Mostrar textos cadastrados </button>
+
+      <div class='resposta'>{text}</div>
     </div>
   )
 }

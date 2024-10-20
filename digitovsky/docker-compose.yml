@@ -5,7 +5,7 @@ services:
     build: ./backend
     volumes:
       - ./backend:/usr/local/service
-    command: [ "sh", "-c", "cd /usr/local/service && gradle bootRun" ]
+    command: [ "sh", "-c", "cd /usr/local/service && gradle bootRun --no-daemon" ]
     ports:
       - "8080:8080"
     depends_on:
@@ -16,7 +16,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
 
   database:
-    image: "mysql:8.0"
+    image: "mysql:latest"
     restart: always
     environment:
       MYSQL_ROOT_USER: root
@@ -38,5 +38,3 @@ services:
     command: [ "sh", "-c", "cd /usr/local/service && npm install && npm run dev -- --host"]
     depends_on:
       - backend
-    # stdin_open: true
-    # tty: true

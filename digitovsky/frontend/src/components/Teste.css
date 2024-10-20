@@ -1,0 +1,31 @@
+.t{
+    text-align: center;
+    position:relative;
+    bottom: 200px;
+}
+
+.info{
+    text-align: initial;
+    display: grid;
+    flex-direction: initial;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+}
+.pesquisa-texto{
+    display: flex;
+    flex-direction: initial;
+    margin-bottom: 40px;
+}
+
+.botaoTexto{
+    display: flex;
+    flex-direction: initial;
+    margin-bottom: 20px;
+}
+
+.resposta{
+    width: 500px;
+    display:flex;
+    text-align: initial;
+    white-space: pre-wrap;
+}
