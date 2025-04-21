@@ -1,0 +1,74 @@
+/* criando variaveis de cores globais */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-color);
+}
+
+body{
+    background-color: var(--background-color);
+    padding: 0px;
+    margin: 0px;
+}
+
+#root {   
+    display: flex;
+    background-color: var(--background-color);
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --background-color: #0D1923;
+
+    --background-card: rgba(0, 255, 234, 0.34);
+    --border-radius-card: 60px;
+
+    --font-weight-button: 800;
+
+    --border-avatar-color: #bababa;
+    --boder-avatar-padding: 2.2vh;
+    
+    --primary_button-color: #ff6a00;
+    --primary_button-hover-color: #D85E05;
+
+    --shadow-button-color: #d85d0596;
+    
+    --return-shadow-button-color: #72129893;
+
+    
+    
+    --action-button-radius: 10px;
+    --action-button-color: #721298;
+    --action-button-hover-color: #5A0F78;
+    --action-button-opacity: 0.8;
+    --boder-action-button-padding: 5px;
+
+    --button-radius: 5px;
+
+    --transparent-color: rgba(0, 0, 0, 0.25);
+    --boder-button-type: dotted;
+    --boder-button-color: #0000003D;
+    --boder-button-padding: 6px;
+
+    --boder-init-button-padding: 10px;
+
+    --nav_boder-button-padding: 6px;
+
+    /* Opacidade em 83% */
+    --placeholder-color: rgba(191, 209, 229, 0.83);
+    --placeholder-text-color: #000000;
+
+
+    /* top right bottom left; */
+
+    --margin-content-v: 8px;
+    --margin-content-h: 15px;
+
+
+    --font-size: 48px;
+    --text-color: #FFFFFF;
+}

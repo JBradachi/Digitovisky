@@ -1,0 +1,307 @@
+@keyframes vibrate {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes hit {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+
+.keyboard {
+  text-align: center;
+  font-size: 93.5%;
+  font-family: sans-serif;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: first baseline;
+  align-items: first baseline;
+  justify-items: first baseline;
+
+  max-width: 1000px;
+  width: 70%;
+  max-height: 60vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.keyboard__row {
+  display: flex;
+  justify-content: first baseline;
+  margin: 0.5em 0;
+  width: 100%; /* Mantém a linha de teclas dentro da largura definida do teclado */
+  max-width: 100%; /* Garante que as linhas respeitem o tamanho máximo do teclado */
+}
+
+/* Aplicando gradiente nas teclas */
+.key {
+  color: white;
+  text-align: center;
+  line-height: 34px;
+
+  border-radius: 0.4em;
+  margin: 0.3em;
+  padding: 0.5em;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0.2em 0 0.05em rgba(0, 0, 0, 0.3);
+  user-select: none;
+  box-sizing: border-box;
+  transition: background 0.3s;
+
+  min-width: 2.5em;
+  width: 4vw;
+  max-width: 4em;
+  height: 50px;
+
+  flex: 1 auto;
+}
+
+
+.key:active,
+.key[data-pressed="true"] {
+  animation: hit 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  color: #ddd;
+  box-shadow: 0 0 0 0.05em rgba(0, 0, 0, 0.5);
+}
+
+.key--mindinho {
+  border: 2px solid #720e77;
+  background: #720e77;
+}
+.key--anelar {
+  border: 2px solid #5b3097;
+  background: #5b3097;
+}
+.key--medio {
+  border: 2px solid #435a99;
+  background: #435a99;
+}
+
+.key--indicador {
+  border: 2px solid #1e8696;
+  background: #1e8696;
+}
+
+.key--polegar {
+  border: 1px solid #8f0f961f;
+  background: linear-gradient(
+    45deg,
+    #8f0f96,
+    #394976,
+    rgb(22, 94, 107),
+    #394976,
+    #8f0f96
+  );
+}
+
+#setas,
+#back,
+#tab,
+#caps,
+#enter,
+#right-shift,
+#ctrl,
+#alt {
+  flex: 2;
+  max-width: 8em;
+}
+
+#caps{
+  max-width: 12em;
+}
+
+#right-shift {
+  max-width: 12em;
+}
+
+#space {
+  width: 100%;
+  max-width: 30em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.selected {
+  background-color: transparent;
+ 
+  -webkit-animation: vibrate 0.3s linear infinite both;
+  animation: vibrate 0.3s linear infinite both;
+}
+
+.selected-space {
+  
+  background: transparent;
+  border: 2px solid #720e77;
+
+  -webkit-animation: vibrate 0.3s linear infinite both;
+  animation: vibrate 0.3s linear infinite both;
+}
+
+.hit {
+  -webkit-animation: hit 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: hit 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.linha_3 {
+  margin: 0.35em;
+}
+
+
+#enter-w {
+  background: #00000000;
+  border-color: #00000000;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+  
+  max-width: 5em;
+}
+
+#enter {
+  position: relative;
+  height: 125px;
+  line-height: 45px;
+  min-width: 5em;
+  bottom: 74px;
+  /* max-height: 116px; */
+}
+
+#linha_4,
+#linha_5 {
+  position: relative;
+  bottom: 80px;
+}
+
+.linha_1,
+.dupla {
+  line-height: 16px;
+}
+
+#back {
+  line-height: 30px;
+  text-align: end;
+  padding-right: 25px;
+}
+
+.pequeno {
+  display: flex;
+  justify-content: center;
+  align-content: end;
+  font-size: 200%;
+  font-weight: 600;
+}
+
+.margin {
+  margin-top: 10px;
+}
+
+.under {
+  font-weight: 100;
+}
+
+#left-bar{
+  line-height: 18px;
+}
+
+@media (max-width: 1500px) {
+  #enter {
+    left: 0em;
+  }
+  .keyboard {
+    font-size: 0.98vw;
+  }
+}
+
+@media (max-width: 1300px) {
+  #enter {
+    left: 0em;
+    height: 110px;
+    bottom: 62px;
+  }
+  .keyboard {
+    font-size: 0.98vw;
+  }
+  #linha_4,
+  #linha_5 {
+    position: relative;
+    bottom: 64px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .key {
+
+
+    height: 35px;
+    flex: 1 auto;
+
+    font-weight: 800;
+  }
+
+  #enter {
+    left: 0em;
+    height: 90px;
+    bottom: 53px;
+  }
+  #linha_4,
+  #linha_5 {
+    position: relative;
+    bottom: 57px;
+  }
+  .linha_1,
+  .dupla {
+    line-height: 11px;
+  }
+  #left-bar{
+    line-height: 13px;
+  }
+
+  #alt-w{
+    max-width: 5em;
+  }
+}

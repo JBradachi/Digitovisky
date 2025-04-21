@@ -1,0 +1,213 @@
+* {
+  --ballon-background-color: rgba(0, 255, 234, 0.34);
+  --top: 25.4vmin;
+}
+
+/* animação para piscar a barra */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -1600px 0;
+  }
+  100% {
+    background-position: -3200px 0; 
+  }
+}
+
+.content {
+  background: url(../assets/images/background.png);
+  animation: moveBackground 220s linear infinite;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+
+  margin-top: var(--margin-content-v);
+  margin-bottom: var(--margin-content-v);
+  margin-left: var(--margin-content-h);
+  margin-right: var(--margin-content-h);
+
+  justify-content: center;
+  width: 100%;
+  height: 97vh;
+  padding: 20px;
+  box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
+}
+
+#root {
+  background-color: var(--background-color);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.avatarContainer {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: floatingcard 5s linear infinite;
+}
+
+@keyframes floatingcard {
+  0% {
+    transform: translateY(0); /* Posição inicial */
+  }
+  50% {
+    transform: translateY(-4px); /* Elevação no meio da animação */
+  }
+  100% {
+    transform: translateY(0); /* Volta para a posição inicial */
+  }
+}
+
+.avatar {
+  width: 15vw;
+  border-radius: 50%;
+  border: 1.5vh solid var(--border-avatar-color);
+  box-shadow: -10px 10px 5px var(--transparent-color);
+  aspect-ratio: 1;
+}
+
+.user {
+  /* fonte com vmin (viewport) se ajusta conforme a altura ou largura */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.1;
+  overflow: hidden;
+
+  width: 90%;
+  height: 10.5vmin;
+  max-height: 10.5vmin;
+  margin-top: -2vh;
+  background-color: #00b7a8;
+
+  padding: 2px;
+
+  border-radius: 15% / 30%;
+  border: 0.8vh solid var(--border-avatar-color);
+  z-index: 1;
+
+  word-break: break-word;
+
+  box-shadow: -10px 10px 5px var(--transparent-color);
+}
+
+.return {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+
+  width: 42px;
+  padding: 1%;
+  font-size: 20px;
+  background-color: var(--action-button-color);
+  opacity: var(--action-button-opacity);
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  animation: floatingcard 6s linear infinite;
+}
+
+.return::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 4px var(--transparent-color);
+  z-index: -1;
+}
+
+.return:hover,
+.return:focus {
+  transition: background-color 0.5s;
+  background-color: var(--action-button-hover-color);
+}
+
+.return:active {
+  background-color: var(--action-button-hover-color);
+  box-shadow: 0 5px var(--transparent-color);
+  transform: translateY(4px);
+}
+
+.messageBubble {
+  margin-top: 30px;
+  margin-left: 40px;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.ballon {
+  margin: 0 auto;
+  background: var(--ballon-background-color);
+
+  font-size: 4vmin;
+  font-weight: 600;
+  color: #fff;
+  /* text-align: center; */
+
+  width: 75%;
+  height: 32.5vh;
+  padding: 2vw 4vh;
+  border-radius: 1.4vw 1.4vw 1.4vw 1.4vw;
+
+  position: relative;
+  margin-top: 20px;
+  border: 10px 0px 7px 7px 7px solid #00ffea11;
+  box-shadow: 10px 10px 25px 7px rgba(0, 0, 0, 0.25);
+  /* border: var(--boder-action-button-padding) solid rgba(0, 0, 0, 0.1);  */
+  animation: floatingcard 5s linear infinite;
+}
+
+.teclado {
+  margin-left: 7vw;
+  
+  width: 100%;
+  overflow: hidden;
+  /* animation: floatingcard 5s linear infinite; */
+}
+
+.correto {
+  color: #dd6314;
+}
+
+.errado {
+  color: #ff0404;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+
+}
+
+.bar {
+  /* font-size: 2em; */
+  color: #bebebe;
+  animation: blink 1.2s infinite;
+}

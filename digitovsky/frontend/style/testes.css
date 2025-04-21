@@ -1,0 +1,92 @@
+/* Smartphones (600px para baixo) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Dispositivos um pouco maiores, mas ainda pequenos (Pequenos Tablets e Smartphones + largos, 600px para cima) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/*Dispostivos Médios (Tablets deitados, 768px para cima) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Dispostivos Largos (laptops/desktops, 992px para cima) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Super Largos (Telas maiores laptops, desktops e até TVs, 1200px para cima) */
+@media only screen and (min-width: 1200px) {
+    
+}
+
+/* o que aconteceria se passar o mouse em cima do elemento */
+.classFicticia a:hover{
+
+}
+
+
+/* 
+
+    Por padrão os elementos são do tipo bloco 
+        Pega a pagina inteira (a width inteira
+
+
+    Margin do body == 0
+
+
+*/
+
+
+/*
+
+// Na classe css do PAI
+
+    aling-items --> determina posição vertical dos itens (pra cima e pra baixo [Trata os itens de forma individual
+
+    justify-content -->  determina posição horizontal dos itens (pra cima e pra baixo
+
+    flex-flox: row (determina que os filhos estão alinhados por linha (um em cada columa)) wrap (respeita o tamanho do pai na hora de apresentar os elementos)
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+    justify-content
+            space-between --> coloca espaço ENTRE os elementos de forma uniforme (isso na horizontal -- --
+            space=arround --> espaço EM VOLTA dos elementos de forma uniforme
+    
+    align-content: center --> determina que todos os elementos estarão proximos centralizados no meio da div pai
+        meio que cria um conteiner que vai determinar como os blocos ficarão espalhados após um overflow (apos um wrap, algum ter que ir pra parte de baixo
+        align-content --> pega TODOS os itens e trata como um
+
+
+
+
+// Na classe css do FILHO
+    flex-row -> crescimento dos nosso itens em relação a div pai de forma automatizada
+        sem ela, antes tinha tamanho fixo
+        flex-row: 1 --> crescimento uniforme, todas as divs vão aumentar da mesma forma para se encaixar no aumento do tamanho do pai
+
+        posso determinar um flex-row diferente para cada div sem problemas
+
+    flex: xx% --> dá o tamanho do elemento filho (em relação ao elemento pai
+        (isso permite informar mais claramente como e quais elementos vão aparecer por coluna (quais estarão um do lado do outro e etc...
+
+
+*/
+
+/* TODO CSS deve TER
+    Por padrão, o valor é content-box, o que significa que as dimensões (width e height) do elemento se aplicam apenas ao conteúdo.
+    As bordas e o preenchimento (padding) são adicionados por fora, aumentando o tamanho total do elemento.
+
+     
+    * {
+        box-sizing: border-box
+    }
+    Com esse codigo
+     As bordas e o preenchimento (padding) são incluídos nas dimensões totais do elemento.
+        a width e a height do elemento incluem o conteúdo, as bordas e o padding, não ultrapassando o tamanho especificado.
+
+*/

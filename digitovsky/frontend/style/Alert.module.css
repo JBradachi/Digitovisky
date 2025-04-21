@@ -1,0 +1,91 @@
+.toast {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fa, #e0e0e0); /* Gradiente suave */
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.1); /* Mantendo a sombra suave */
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.toast.active {
+  transform: translateX(0%);
+}
+
+.toastContent {
+  display: flex;
+  align-items: center;
+}
+
+.simbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  min-width: 35px;
+  background-color: #c91100;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  font-weight: bolder;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.text1 {
+  font-weight: 600;
+  color: #333;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+  color: #555; /* Cor suave para o X */
+}
+
+.close:hover {
+  opacity: 1;
+  color: #c91100; /* Muda a cor do X para vermelho quando passa o mouse */
+}
+
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+}
+
+.progress.active:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #c91100;
+  animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+  100% {
+    right: 100%;
+  }
+}

@@ -1,0 +1,181 @@
+/* Fundo opaco para sobreposição */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* fundo escuro com 50% de opacidade */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* assegura que fica acima dos outros elementos */
+}
+
+.content {
+  /* background-image: url(../assets/images/background.png);
+  background-size: 80%; */
+
+  display: flex;
+  align-self: center;
+  width: 100%;
+  /* height: 97vh; */
+  justify-content: center;
+  margin-top: 1vh;
+
+}
+
+#root {
+  background-color: var(--background-color);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+input,
+select,
+textarea {
+  background-color: var(--placeholder-color);
+  color: var(--placeholder-text-color);
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  font-size: 30px;
+  padding: 15px 20px;
+
+  font-weight: 500;
+  width: 66%;
+  height: auto;
+
+  margin-bottom: 30px;
+}
+
+/* muda a borda quando está escrevendo no input */
+input:focus {
+  box-shadow: 6px 6px 15px var(--shadow-button-color);
+}
+
+.card {
+  width: 700px;
+  height: 500px;
+  background-color: #0B7076;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+
+  border-radius: var(--border-radius-card);
+
+  overflow: hidden;
+  align-self: center;
+}
+
+.primary_button {
+  position: relative;
+
+  margin-bottom: 0px;
+
+  width: 35%; 
+  height: 85px;
+
+  background-color: var(--primary_button-color);
+  border: var(--boder-button-color);
+  border-radius: var(--button-radius); /* mesma borda arredondada do botão */
+
+  color: var(--text-color);
+  font-weight: var(--font-weight-button);
+  font-size: var(--font-size);
+  text-align: center;
+
+  z-index: 1;
+
+  margin-bottom: 30px;
+}
+
+.primary_button::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+
+  border: var(--boder-button-padding) solid rgba(0, 0, 0, 0.25); /* cor da borda */
+  border-radius: var(--button-radius); /* mesma borda arredondada do botão */
+  z-index: -1; /* ficar atrás do botão */
+  box-shadow: 4px 4px 7px 6px var(--transparent-color);
+}
+
+.primary_button:hover,
+.primary_button:focus {
+  transition: background-color 0.5s;
+  background-color: var(--primary_button-hover-color);
+}
+
+.primary_button:active {
+  background-color: var(--primary_button-hover-color);
+  box-shadow: 4px 4px 7px 6px var(--shadow-button-color);
+  transform: translateY(4px);
+}
+
+.card h1 {
+  top: 5vh;
+  width: 75%;
+
+  padding-bottom: 0px;
+  margin-top: 0px;
+  font-size: 80px;
+  font-weight: bolder;
+  text-align: center;
+  position: relative;
+  padding-top: 0px;
+}
+
+.return {
+  position: absolute;
+  top: 80px;
+  left: 72px;
+  width: 78px;
+  height: 80px;
+  font-size: 20px;
+  background-color: #8016aa;
+  /* opacity: var(--action-button-opacity); */
+  opacity: 0.99;
+  border: var(--boder-button-color);
+  border-radius: 6px;
+  font-size: var(--font-size);
+}
+
+.return::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+
+  border: var(--boder-action-button-padding) solid rgba(0, 0, 0, 0.25); /* cor da borda */
+  border-radius: 6px;
+  z-index: -1; /* ficar atrás do botão */
+
+  /* bottom right blur */
+  box-shadow: 10px 10px 4px var(--transparent-color);
+}
+
+.return:hover,
+.return:focus {
+  transition: background-color 0.5s;
+  background-color: var(--action-button-hover-color);
+}
+
+.return:active {
+  background-color: var(--action-button-hover-color);
+  box-shadow: 0 5px var(--transparent-color);
+  transform: translateY(4px);
+}

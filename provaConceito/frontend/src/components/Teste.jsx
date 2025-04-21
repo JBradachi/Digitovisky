@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import './Teste.css'
+import './Jogar.jsx'
+import Jogar from "./Jogar.jsx";
 
 export default function Teste(){
   const [text, setText] = useState("Nada por enquanto");
@@ -38,6 +40,8 @@ export default function Teste(){
           />
         <button type="submit" >Selecionar</button>
       </form>
+      <Jogar />
+      {/*<KeyListenerComponent /> */}
 
       <button onClick={getAllText} class='botaoTexto'> Mostrar textos cadastrados </button>
 
